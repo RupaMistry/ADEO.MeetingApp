@@ -1,0 +1,55 @@
+﻿@model AttendeeCallRequestModel
+
+@{
+    ViewBag.PageTitle = "Attendees Dashboard";
+    await Html.RenderPartialAsync("_MeetingDetailsPartial", Model.MeetingDetails);
+}
+ 
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <table style="width: 100%;" id="attendeesList" class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone Number</th>
+                    <th>Is Present?</th>
+                    <th>Is Called?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var attendee in Model.Attendees)
+                {
+                    <tr>
+                        <td id="txtName_@attendee.ID">@attendee.FullName</td>
+                        <td>@attendee.PhoneNumber</td>
+                        <td>@attendee.DidAttend</td>
+                        <td id="txtCall_@attendee.ID">@attendee.IsCalled</td>
+                        <td>
+                            @* If attendee is absent, disable both the action buttons.
+                            If present and called already, disable call button and only keep "End" button active. *@
+                            @{
+                                bool canCall = true, canEndCall = true;
+
+                                if (!attendee.DidAttend) { canCall = false; canEndCall = false; }
+                                else if (attendee.DidAttend && attendee.IsCalled) { canCall = false; }
+                                else if (attendee.DidAttend && !attendee.IsCalled) { canEndCall = false; } 
+                            }
+                            <button @(canCall ? "" : "disabled") 
+                                    id="btnCall_@attendee.ID" class="startCall mb-2 me-2 btn btn-success"
+                                    meetingID ="@Model.MeetingDetails.ID" attendeeID="@attendee.ID">
+                                START CALL
+                            </button>
+                           
+                            <button @(canEndCall ? "" : "disabled")
+                                    id="btnEndCall_@attendee.ID" class="endCall mb-2 me-2 btn btn-danger"
+                                    meetingID="@Model.MeetingDetails.ID" attendeeID="@attendee.ID">
+                                END CALL
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

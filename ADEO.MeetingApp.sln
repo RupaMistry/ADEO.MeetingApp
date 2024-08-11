@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADEO.MeetingApp.Web", "ADEO.MeetingApp\ADEO.MeetingApp.Web.csproj", "{6714C9F4-FAF1-46C7-86DB-D9AC7CDFCBD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADEO.MeetingApp.DAL", "ADEO.MeetingApp.DAL\ADEO.MeetingApp.DAL.csproj", "{09D5219E-1711-469A-B474-8FA1D9B19FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6714C9F4-FAF1-46C7-86DB-D9AC7CDFCBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6714C9F4-FAF1-46C7-86DB-D9AC7CDFCBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6714C9F4-FAF1-46C7-86DB-D9AC7CDFCBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6714C9F4-FAF1-46C7-86DB-D9AC7CDFCBD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D5219E-1711-469A-B474-8FA1D9B19FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D5219E-1711-469A-B474-8FA1D9B19FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D5219E-1711-469A-B474-8FA1D9B19FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D5219E-1711-469A-B474-8FA1D9B19FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B01095EF-EB41-4102-A9ED-32FF90377E37}
+	EndGlobalSection
+EndGlobal

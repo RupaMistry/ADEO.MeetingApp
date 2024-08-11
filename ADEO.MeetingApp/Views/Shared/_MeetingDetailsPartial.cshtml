@@ -1,0 +1,71 @@
+﻿@model MeetingDetails
+
+<div class="tabs-animation">
+    <div class="mb-3 card">
+        <div class="card-header-tab card-header">
+            <div class="card-header-title font-size-lg text-capitalize fw-normal">
+                <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
+                Meeting Event Details
+            </div>
+        </div>
+        <div class="g-0 row">
+            <div class="col-sm-6 col-md-4 col-xl-4">
+                <div class="card no-shadow rm-border bg-transparent widget-chart text-start">
+                    <div class="icon-wrapper rounded-circle">
+                        <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
+                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
+                    </div>
+                    <div class="widget-chart-content">
+                        <div class="widget-subheading">Company:  @Model.CompanyName</div>
+                        <div class="widget-numbers text-warning">@Model.Name</div>
+                        <div class="widget-description opacity-8 text-focus">
+                            <div class="d-inline text-warning pe-1">
+                                <span class="ps-1">Date: @Model.Date.ToLongDateString()</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider m-0 d-md-none d-sm-block"></div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-xl-4">
+                <div class="card no-shadow rm-border bg-transparent widget-chart text-start">
+                    <div class="icon-wrapper rounded-circle">
+                        <div class="icon-wrapper-bg opacity-9 bg-success"></div>
+                        <i class="lnr-apartment text-white"></i>
+                    </div>
+                    <div class="widget-chart-content">
+                        <div class="widget-subheading">Room Name:</div>
+                        <div class="widget-numbers text-success">
+                            <span>@Model.RoomName</span>
+                        </div>
+                        <div class="widget-description text-focus">
+                            <span class="text-success ps-1">
+                                <span class="ps-1">Timings: @Model.FromTime - @Model.ToTime</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-4">
+                <div class="card no-shadow rm-border bg-transparent widget-chart text-start">
+                    <div class="icon-wrapper rounded-circle">
+                        <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
+                        <i class="lnr-user text-white"></i>
+                    </div>
+                    <div class="widget-chart-content">
+                        <div class="widget-subheading">Host:</div>
+                        <div class="widget-numbers text-danger">
+                            <span>@Model.HostFullName</span>
+                        </div>
+                        <div class="widget-description opacity-8 text-focus">
+                            <span class="text-danger ps-1">
+                                <span class="ps-1">Contact: @Model.HostContact</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider m-0 d-md-none d-sm-block"></div>
+            </div>
+        </div> 
+    </div>
+</div>
